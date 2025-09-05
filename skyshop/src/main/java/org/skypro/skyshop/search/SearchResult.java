@@ -16,6 +16,6 @@ public class SearchResult {
     }
 
     public static SearchResult fromSearchable(Searchable search){
-        return new SearchResult(search.getId(UUID.randomUUID()), search.getName(), search.getContent());
+        return new SearchResult(search.getId().toString(), search.getName(), search.getContent());
     }
 }
