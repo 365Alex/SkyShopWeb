@@ -58,6 +58,7 @@ public abstract class Product implements Searchable {
             return false;
        Product product = (Product) obj;
         return name.equals(product.name);
+
     }
     public int hashCode(){
         return Objects.hash(name);

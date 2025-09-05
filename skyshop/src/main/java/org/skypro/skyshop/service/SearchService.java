@@ -20,6 +20,7 @@ public class SearchService {
     @Autowired
     public SearchService(StorageService storageService) {
         this.storageService = storageService;
+
     }
 
     public List<SearchResult> search(String term) {

@@ -26,7 +26,6 @@ public class ShopController {
     @GetMapping("/products")
     public Collection<Product> getAllProducts() {
         return storageService.getProduct();
-
     }
 
     @GetMapping("/articles")

@@ -30,6 +30,7 @@ public class SkyshopApplication {
 		basketOne.put(productTree, productFor);
 		System.out.println(basketOne);
 
+
 		productBasket.addProduct(cheese);
 		productBasket.addProduct(productFife);
 		productBasket.addProduct(productTree);

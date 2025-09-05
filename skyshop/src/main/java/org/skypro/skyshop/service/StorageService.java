@@ -20,6 +20,7 @@ public class StorageService {
     public StorageService() {
         this.product = new HashMap<>();
         this.article = new HashMap<>();
+
     }
 
     public Collection<Product> getProduct() {
