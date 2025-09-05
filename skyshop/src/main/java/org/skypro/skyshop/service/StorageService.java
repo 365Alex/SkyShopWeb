@@ -24,6 +24,7 @@ public class StorageService {
     }
     public Map<UUID, Article> getArticle(){
         return article;
+
     }
 
 

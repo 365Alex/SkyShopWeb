@@ -21,6 +21,7 @@ private final StorageService storageService;
         List<SearchResult> searchResults = storageService.stream().filter(s-> s.searchTerm().
                 contains(term)).collect(Collectors.toCollection(()-> new ArrayList<SearchResult>()));
         return searchResults;
+
     }
 
 

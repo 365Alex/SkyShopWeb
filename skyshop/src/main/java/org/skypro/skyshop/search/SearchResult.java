@@ -12,6 +12,7 @@ public class SearchResult {
         this.id = id;
         this.name = name;
         this.contentType = contentType;
+
     }
 
     public static SearchResult fromSearchable(Searchable search){
