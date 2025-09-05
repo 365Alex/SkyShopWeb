@@ -6,21 +6,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 @Service
 
 public class StorageService {
     private final Map<UUID, Product> product;
     private final Map<UUID, Article> article;
-    private Collection<Product> storageService;
 
     public StorageService(Map<UUID, Product> product, Map<UUID, Article> article) {
-        this.product = product;
-        this.article = article;
+        this.product = new HashMap<>();
+        this.article = new HashMap<>();
     }
 
     public Map<UUID, Product> getProduct() {
@@ -28,15 +24,6 @@ public class StorageService {
     }
     public Map<UUID, Article> getArticle(){
         return article;
-    }
-
-    @GetMapping("/products")
-    public Collection<Product> getAllProducts() {
-        return storageService.getAllProducts();
-    }
-    @GetMapping("/articles")
-    public Collection<Article> getAllArticles(){
-        return storageService.getAllArticles();
     }
 
 

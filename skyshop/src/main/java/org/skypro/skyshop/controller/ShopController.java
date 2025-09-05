@@ -10,15 +10,19 @@ import java.util.Collection;
 
 @RestController
 public class ShopController {
-    StorageService storageService;
+    private final StorageService storageService;
+
+    public ShopController(StorageService storageService){
+        this.storageService = storageService;
+    }
 
     @GetMapping("/products")
     public Collection<Product> getAllProducts() {
-        return storageService.getAllProducts();
+        return storageService.getProduct().values();
     }
 
     @GetMapping("/articles")
     public Collection<Article> getAllArticles(){
-        return storageService.getAllArticles();
+        return storageService.getArticle().values();
     }
 }
