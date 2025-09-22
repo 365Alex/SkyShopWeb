@@ -1,0 +1,26 @@
+package org.skypro.skyshop.basket;
+
+import org.skypro.skyshop.product.Product;
+
+import java.util.List;
+
+public class UserBasket {
+   private List<org.skypro.skyshop.basket.BasketItem> basketItems;
+   private int total;
+
+    public UserBasket(List<org.skypro.skyshop.basket.BasketItem> basketItems){
+        this.basketItems = basketItems;
+        this.total = basketItems.stream().
+                mapToInt(s -> s.getItem() * s.getProduct().getPrice()).sum();
+    }
+
+    public List<org.skypro.skyshop.basket.BasketItem> getBasketItems(){
+        return basketItems;
+    }
+
+    public int getTotal(){
+        return total;
+    }
+
+
+}

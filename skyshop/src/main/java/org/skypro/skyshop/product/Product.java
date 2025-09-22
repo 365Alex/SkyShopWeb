@@ -30,11 +30,13 @@ public abstract class Product implements Searchable {
     public abstract String toString();
 
     @JsonIgnore
+    @Override
     public String searchTerm(){
-        return getNameProduct();
+        return getName();
     }
 
     @JsonIgnore
+    @Override
     public String getContent(){
         return "PRODUCT";
     }
@@ -56,6 +58,7 @@ public abstract class Product implements Searchable {
             return false;
        Product product = (Product) obj;
         return name.equals(product.name);
+
     }
     public int hashCode(){
         return Objects.hash(name);
