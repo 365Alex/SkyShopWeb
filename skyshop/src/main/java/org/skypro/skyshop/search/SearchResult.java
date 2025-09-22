@@ -14,7 +14,7 @@ public class SearchResult {
         this.contentType = contentType;
     }
 
-    public static SearchResult fromSearchable(Searchable search){
+    public static SearchResult fromSearchable(org.skypro.skyshop.search.Searchable search){
         return new SearchResult(search.getId().toString(), search.getName(), search.getContent());
     }
 }
