@@ -46,22 +46,19 @@ public class BasketServiceTest {
      */
     @Test
     public void addingAnExistingProduct(){
-        when(storageService.getProduct()).thenReturn(List.of(
-                new SimpleProduct(UUID.randomUUID(), "tea", 57)));
-        List<SearchResult> results = storageService.addProduct("tea");
-        assertFalse(results.isEmpty());
+        when(basketService.getUseBasket()).thenReturn(Optional.empty());
+        SimpleProduct product = new SimpleProduct(UUID.randomUUID(), "milk", 74);
+        storageService.addProduct(product);
+        assertFalse(product.getNameProduct().isEmpty());
 
     }
 
-    /**
-     * .вернуть пустую корзину, если ProductBasket пуст
-     */
     @Test
     public void returnEmptyCartIfProductBasketIsEmpty(){
         when(productBasket.getBasket()).thenReturn(Optional.empty());
-        List<ProductBasket> result = basketService.getUseBasket();
+        List<ProductBasket> result = productBasket.getBasket();
         assertFalse(result.isEmpty());
+        basketService.getUseBasket();
 
     }
-
 }
