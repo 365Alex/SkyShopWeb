@@ -46,7 +46,7 @@ public class BasketServiceTest {
      */
     @Test
     public void addingAnExistingProduct(){
-        when(storageService.getSearchable()).thenReturn(List.of(
+        when(storageService.getProduct()).thenReturn(List.of(
                 new SimpleProduct(UUID.randomUUID(), "tea", 57)));
         List<SearchResult> results = storageService.addProduct("tea");
         assertFalse(results.isEmpty());
