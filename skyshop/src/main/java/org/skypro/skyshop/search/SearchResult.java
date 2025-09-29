@@ -1,8 +1,6 @@
 package org.skypro.skyshop.search;
 
 
-import java.util.UUID;
-
 public class SearchResult {
     private final String name;
     private final String id;
@@ -12,6 +10,16 @@ public class SearchResult {
         this.id = id;
         this.name = name;
         this.contentType = contentType;
+    }
+    public String getName(){
+        return name;
+    }
+
+    public String getId(){
+        return id;
+    }
+    public String getContentType(){
+        return contentType;
     }
 
     public static SearchResult fromSearchable(org.skypro.skyshop.search.Searchable search){
