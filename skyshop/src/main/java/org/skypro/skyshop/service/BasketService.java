@@ -7,10 +7,8 @@ import org.skypro.skyshop.exception.NoSuchProductException;
 import org.skypro.skyshop.product.Product;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 @Service
 public class BasketService {
@@ -28,7 +26,7 @@ public class BasketService {
         productBasket.mapBasket(product.getId());
     }
 
-    public UserBasket getUseBasket(){
+    public List<ProductBasket> getUseBasket(){
         List<BasketItem> basketItems =  productBasket.getBasket().entrySet().stream().
                 map(s -> new BasketItem(storageService.getProductById(s.getKey()).
                         orElseThrow(NoSuchProductException::new), s.getValue())).toList();

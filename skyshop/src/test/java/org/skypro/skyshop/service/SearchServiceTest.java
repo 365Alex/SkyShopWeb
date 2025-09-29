@@ -38,4 +38,12 @@ public class SearchServiceTest {
         assertFalse(results.isEmpty());
         assertEquals(results.get(0).getName(), "лобстер");
     }
+
+    @Test
+    public void SearchInCaseThereAreObjectsButNoSuitableOne(){
+        when(storageServiceOne.getSearchable()).thenReturn(List.of(
+                new Article(UUID.randomUUID(), "рецепты приготовления блинчиков", "Домашние блинчики с начинкой")));
+        List<SearchResult> result = searchServiceOne.search("блинчики");
+        assertFalse(result.isEmpty());
+    }
 }
