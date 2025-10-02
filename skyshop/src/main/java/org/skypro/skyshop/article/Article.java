@@ -35,11 +35,13 @@ public class Article implements Searchable {
 
 
     @JsonIgnore
+    @Override
     public String searchTerm(){
         return toString();
     }
 
     @JsonIgnore
+    @Override
     public String getContent(){
         return "ARTICLE";
     }

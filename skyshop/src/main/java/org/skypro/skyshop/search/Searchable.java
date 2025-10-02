@@ -7,6 +7,7 @@ public interface Searchable {
 
     String getContent();
 
+
     default String getStringRepresentation(){
         return getName() + " - " + getContent();
     }
