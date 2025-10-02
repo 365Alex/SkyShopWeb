@@ -14,7 +14,7 @@ public class UserBasket {
                 mapToInt(s -> s.getItem() * s.getProduct().getPrice()).sum();
     }
 
-    public List<org.skypro.skyshop.basket.BasketItem> getBasketItems(){
+    public List<BasketItem> getBasketItems(){
         return basketItems;
     }
 
